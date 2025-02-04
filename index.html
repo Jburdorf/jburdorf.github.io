@@ -55,43 +55,53 @@
     <span class="image main"><img src="images/pic02.jpg" alt="" /></span>
     <p>I've worked for three different companies as an intern: Innovative Health LLC as an R&D intern, Cherne Industries as a Research and New Product Development intern, and Tetra Pak as a Mechanical Design Engineering Intern. I also worked for over a year as a private tutor through Wyzant.com, and I did seasonal work for several years as a production worker in a metal shop.</p>
 
-    <button class="collapsible">IH</button>
-    <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis lectus sed mauris pretium, non facilisis ligula suscipit.</p>
-    </div>
+    <div class="collapsible-container">
+        <button class="collapsible">IH</button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis lectus sed mauris pretium, non facilisis ligula suscipit.</p>
+        </div>
 
-    <button class="collapsible">CH</button>
-    <div class="content">
-        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur ut lectus vel orci viverra eleifend.</p>
-    </div>
+        <button class="collapsible">CH</button>
+        <div class="content">
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur ut lectus vel orci viverra eleifend.</p>
+        </div>
 
-    <button class="collapsible">TP</button>
-    <div class="content">
-        <p>Integer nec justo vel nunc scelerisque tincidunt. Phasellus tristique justo a dui volutpat, id scelerisque ex interdum.</p>
-    </div>
+        <button class="collapsible">TP</button>
+        <div class="content">
+            <p>Integer nec justo vel nunc scelerisque tincidunt. Phasellus tristique justo a dui volutpat, id scelerisque ex interdum.</p>
+        </div>
 
-    <button class="collapsible">WZ</button>
-    <div class="content">
-        <p>Suspendisse potenti. Nam gravida orci in sapien bibendum, sed congue metus ultricies. Donec elementum at risus et accumsan.</p>
-    </div>
+        <button class="collapsible">WZ</button>
+        <div class="content">
+            <p>Suspendisse potenti. Nam gravida orci in sapien bibendum, sed congue metus ultricies. Donec elementum at risus et accumsan.</p>
+        </div>
 
-    <button class="collapsible">EN</button>
-    <div class="content">
-        <p>Aenean condimentum, metus et malesuada egestas, tortor quam suscipit nunc, id pellentesque libero lectus non nisl.</p>
+        <button class="collapsible">EN</button>
+        <div class="content">
+            <p>Aenean condimentum, metus et malesuada egestas, tortor quam suscipit nunc, id pellentesque libero lectus non nisl.</p>
+        </div>
     </div>
 </article>
 
 <style>
+    .collapsible-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
     .collapsible {
         background-color: #444;
         color: white;
         cursor: pointer;
-        padding: 10px;
-        width: 100px;
+        padding: 12px;
+        width: 60%; /* Adjust this percentage if needed */
+        max-width: 400px; /* Ensures the button doesn't become too wide on large screens */
         border: none;
         text-align: center;
         font-size: 16px;
-        margin: 5px;
+        margin: 5px 0;
         border-radius: 5px;
     }
 
@@ -101,11 +111,12 @@
 
     .content {
         display: none;
-        padding: 10px;
-        border: 1px solid #ddd;
-        margin-top: 5px;
+        padding: 15px;
+        width: 60%; /* Same as button width */
+        max-width: 400px;
         border-radius: 5px;
-        background-color: #f9f9f9;
+        background-color: transparent; /* Matches the background */
+        text-align: center;
     }
 </style>
 
@@ -120,7 +131,6 @@
         });
     });
 </script>
-
 						<!-- About -->
 							<article id="Skills">
 								<h2 class="major">About</h2>
