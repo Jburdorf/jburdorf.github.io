@@ -4,16 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
+    <style>
+        body {
+            background-color: #5f7380; /* Greyish blue */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .pdf-container {
+            width: 100%;
+            max-width: 800px; /* Limits width for better viewing on large screens */
+            margin: auto;
+        }
+        iframe {
+            width: 100%;
+            height: 80vh; /* Takes up 80% of the viewport height */
+            border: none;
+        }
+        .download-link {
+            margin-top: 10px;
+            display: block;
+            font-size: 18px;
+            text-decoration: none;
+            color: #add8e6; /* Light blue */
+        }
+        .download-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>My Resume</h1>
-    
-    <!-- Using embed to display PDF -->
-    <!-- <embed src="Jackson Burdorf Mechanical Engineer Resume.pdf" type="application/pdf" width="100%" height="600px" /> -->
 
-    <!-- Alternative using iframe -->
-    <iframe src="Jackson Burdorf Mechanical Engineer Resume.pdf" width="100%" height="600px"></iframe> 
+    <div class="pdf-container">
+        <!-- Mobile-compatible way to embed PDF -->
+        <iframe id="pdf-viewer" src="" allowfullscreen></iframe>
+    </div>
 
-     <p>If the PDF does not display, you can <a href="resume.pdf" download="Jackson Burdorf Mechanical Engineer Resume.pdf">download it here</a>.</p>
+    <p>If the PDF does not display, <a class="download-link" href="Jackson%20Burdorf%20Mechanical%20Engineer%20Resume.pdf" target="_blank">click here to view</a> or 
+       <a class="download-link" href="Jackson%20Burdorf%20Mechanical%20Engineer%20Resume.pdf" download>download it here</a>.
+    </p>
+
+    <script>
+        // Check if the device is mobile and adjust PDF display accordingly
+        document.addEventListener("DOMContentLoaded", function () {
+            const pdfViewer = document.getElementById("pdf-viewer");
+            const pdfFile = "Jackson%20Burdorf%20Mechanical%20Engineer%20Resume.pdf";
+
+            if (window.innerWidth < 768) {
+                // Use Google Docs Viewer on mobile
+                pdfViewer.src = "https://docs.google.com/gview?url=" + window.location.origin + "/" + pdfFile + "&embedded=true";
+            } else {
+                // Use direct PDF embed on desktop
+                pdfViewer.src = pdfFile;
+            }
+        });
+    </script>
 </body>
 </html>
